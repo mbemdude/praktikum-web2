@@ -3,17 +3,17 @@
         if ($_SESSION['hasil']) {
 ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <h5>Berhasil</h5>
-        <?php echo $_SESSION['pesan']?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        <h5>Berhasil</h5>`
+        <?php echo $_SESSION['pesan'] ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>`
     </div>
 <?php 
     } else {
 ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <h5>Gagal</h5>
+        <h5>Gagal</h5>`
         <?php echo $_SESSION['pesan'] ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>`
     </div>
 <?php 
     }
@@ -25,9 +25,6 @@
 <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Data User</h1>
-        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
-            </a> -->
     </div>
 
     <!-- Content Row -->
@@ -82,8 +79,8 @@
                                             <td><?php echo $row['username'] ?></td>
                                             <td><?php echo $row['level'] ?></td>
                                             <td>
-                                                <a href="#" class="fas fa-edit"></a>
-                                                <a href="#" class="fas fa-trash" style="color: red;"></a>
+                                                <a href="?page=user-update&id=<?php echo $row['id'] ?>" class="fas fa-edit"></a>
+                                                <a href="?page=user-delete&id=<?php echo $row['id'] ?>" class="fas fa-trash" style="color: red;"></a>
                                             </td>
                                         </tr>
                                         <?php } ?>
