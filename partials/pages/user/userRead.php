@@ -3,17 +3,21 @@
         if ($_SESSION['hasil']) {
 ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <h5>Berhasil</h5>`
+        <h5>Berhasil</h5>
         <?php echo $_SESSION['pesan'] ?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>`
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 <?php 
     } else {
 ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <h5>Gagal</h5>`
+        <h5>Gagal</h5>
         <?php echo $_SESSION['pesan'] ?>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>`
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
 <?php 
     }
