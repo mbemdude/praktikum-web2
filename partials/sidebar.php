@@ -42,6 +42,7 @@
             </li>
 
             <!-- Nav Item - Dosen -->
+            <?php if($_SESSION['user_level'] === 'administrator'){ ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -55,6 +56,7 @@
                     </div>
                 </div>
             </li>
+            <?php } ?>
 
             <!-- Nav Item - Laporan -->
             <li class="nav-item">
@@ -71,6 +73,7 @@
             </li>
 
             <!-- Nav Item - User -->
+            <?php if($_SESSION['user_level'] === 'administrator') { ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">
@@ -84,5 +87,6 @@
                     </div>
                 </div>
             </li>
+            <?php } ?>
         </ul>
         <!-- End of Sidebar -->

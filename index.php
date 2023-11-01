@@ -1,5 +1,9 @@
 <?php 
 session_start();
+if(!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
 include 'database/conn.php';
 ?>
 
@@ -25,6 +29,7 @@ include 'database/conn.php';
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="vendor/select2/dist/css/select2.min.css rel="stylesheet"">
 
 </head>
 
@@ -83,13 +88,13 @@ include 'database/conn.php';
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                        <span aria-hidden="true"></span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>

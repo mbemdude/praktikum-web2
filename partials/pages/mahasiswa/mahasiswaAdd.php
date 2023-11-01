@@ -90,7 +90,7 @@ if (isset($_POST['button_create'])) {
                                         <label for="jenis_kelamin" class="py-2">Jenis Kelamin</label>
                                     </div>
                                     <div class="col-lg-10">
-                                        <select name="jenis_kelamin" class="form-control">
+                                        <select name="jenis_kelamin" class="form-control select2-plugins">
                                             <option value="">- Pilih -</option>
                                             <option value="L">Laki-laki</option>
                                             <option value="P">Perempuan</option>

@@ -44,11 +44,11 @@
                                 <i class="fas fa-plus"></i>
                                 Tambah Data
                             </a>
-                            <a href="#" class="btn btn-primary">
+                            <a href="partials/pages/cetak/cetakFpdfMahasiswa.php" class="btn btn-primary">
                                 <i class="fas fa-print"></i>
                                 Cetak PDF
                             </a>
-                            <a href="#" class="btn btn-warning">
+                            <a href="partials/pages/cetak/cetakMahasiswa.php" class="btn btn-warning">
                                 <i class="fas fa-print"></i>
                                 Cetak window.print
                             </a>

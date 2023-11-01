@@ -12,6 +12,7 @@
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="vendor/select2/dist/js/select2.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/chart-area-demo.js"></script>
@@ -20,5 +21,11 @@
     <script>
         $(document).ready(function() {
             $('#myTable').DataTable();
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('.select2-plugins').select2();
         });
     </script>

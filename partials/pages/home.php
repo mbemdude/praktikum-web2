@@ -1,3 +1,20 @@
+                    <?php 
+                    function countRows($table, $db) {
+                        $countSQL = "SELECT COUNT(*) FROM ". $table;
+
+                        $stmt = $db->prepare($countSQL);
+                        $stmt->execute();
+                        $count = $stmt->fetchColumn();
+
+                        return $count;
+                    }
+
+                    $database = new Database();
+                    $db = $database->getConnection();
+
+                    $countMahasiswa = countRows('tb_mahasiswa', $db);
+                    $countUser = countRows('tb_user', $db);
+                    ?>
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -16,7 +33,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Mahasiswa</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1237</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $countMahasiswa ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
@@ -54,7 +71,7 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">423</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $countUser ?></div>
                                                 </div>
                                             </div>
                                         </div>
