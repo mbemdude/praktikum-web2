@@ -67,7 +67,7 @@ if (isset($_POST['button_create'])) {
                                         <label for="level" class="py-2">Level</label>
                                     </div>
                                     <div class="col-lg-10">
-                                        <select name="level" class="form-control">
+                                        <select name="level" class="form-control" id="select2-level">
                                             <option value="">- Pilih -</option>
                                             <option value="operator">Operator</option>
                                             <option value="administrator">Administrator</option>

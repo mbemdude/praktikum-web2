@@ -32,11 +32,17 @@ if(isset($_GET['page'])) {
                 case 'mahasiswa-delete':
                     file_exists('partials/pages/mahasiswa/mahasiswaDelete.php') ? include 'partials/pages/mahasiswa/mahasiswaDelete.php' : include 'partials/pages/404.php';
                     break;
-                case 'mahasiswa-cetak':
-                    file_exists('partials/pages/cetak/cetakMahasiswa.php') ? include 'partials/pages/cetak/cetakMahasiswa.php' : include 'partials/pages/404.php';
+                case 'dosen-read':
+                    file_exists('partials/pages/dosen/dosenRead.php') ? include 'partials/pages/dosen/dosenRead.php' : include 'partials/pages/404.php';
                     break;
-                case 'mahasiswa-fpdf':
-                    file_exists('partials/pages/cetak/cetakFpdfMahasiswa.php') ? include 'partials/pages/cetak/cetakFpdfMahasiswa.php' : include 'partials/pages/404.php';
+                case 'dosen-add':
+                    file_exists('partials/pages/dosen/dosenAdd.php') ? include 'partials/pages/dosen/dosenAdd.php' : include 'partials/pages/404.php';
+                    break;
+                case 'dosen-update':
+                    file_exists('partials/pages/dosen/dosenEdit.php') ? include 'partials/pages/dosen/dosenEdit.php' : include 'partials/pages/404.php';
+                    break;
+                case 'dosen-delete':
+                    file_exists('partials/pages/dosen/dosenDelete.php') ? include 'partials/pages/dosen/dosenDelete.php' : include 'partials/pages/404.php';
                     break;
                 default :
                 include 'partials/pages/404.php';

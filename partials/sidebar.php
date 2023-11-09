@@ -14,7 +14,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="?page=home">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -42,7 +42,6 @@
             </li>
 
             <!-- Nav Item - Dosen -->
-            <?php if($_SESSION['user_level'] === 'administrator'){ ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -52,11 +51,10 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a href="#" class="collapse-item">Data Dosen</a>
+                        <a href="?page=dosen-read" class="collapse-item">Data Dosen</a>
                     </div>
                 </div>
             </li>
-            <?php } ?>
 
             <!-- Nav Item - Laporan -->
             <li class="nav-item">
@@ -74,6 +72,14 @@
 
             <!-- Nav Item - User -->
             <?php if($_SESSION['user_level'] === 'administrator') { ?>
+
+            <!-- Sidebar divider -->
+            <hr class="sidebar-divider">
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Administrator
+            </div>
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour"
                     aria-expanded="true" aria-controls="collapseFour">

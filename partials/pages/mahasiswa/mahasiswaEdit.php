@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
                                         <label for="jurusan" class="py-2">Jurusan</label>
                                     </div>
                                     <div class="col-lg-10">
-                                        <select name="jurusan" class="form-control">
+                                        <select name="jurusan" class="form-control" id="select2-jurusan">
                                             <option value="">- Pilih -</option>
                                             <option value="TI" <?= ($row['jurusan'] == 'TI') ? 'selected' : ''; ?>>Teknik Informatika</option>
                                             <option value="SI" <?= ($row['jurusan'] == 'SI') ? 'selected' : ''; ?>>Sistem Informasi</option>
@@ -100,7 +100,7 @@ if (isset($_GET['id'])) {
                                         <label for="jenis_kelamin" class="py-2">Jenis Kelamin</label>
                                     </div>
                                     <div class="col-lg-10">
-                                        <select name="jenis_kelamin" class="form-control">
+                                        <select name="jenis_kelamin" class="form-control" id="select2-jenis_kelamin">
                                             <option value="">- Pilih -</option>
                                             <option value="L" <?= ($row['jenis_kelamin'] =='L' ? 'selected' : '' ) ?> >Laki-laki</option>
                                             <option value="P" <?= ($row['jenis_kelamin'] =='P' ? 'selected' : '' ) ?> >Perempuan</option>

@@ -4,27 +4,26 @@ if (isset($_POST['button_create'])) {
     $database = new Database();
     $db = $database->getConnection();
 
-    $validationSql = "SELECT * FROM tb_mahasiswa WHERE nim = :nim";
+    $validationSql = "SELECT * FROM tb_dosen WHERE nidn = :nidn";
     $stmtValidation = $db->prepare($validationSql);
-    $stmtValidation->bindParam(':nim', $_POST['nim']);
+    $stmtValidation->bindParam(':nidn', $_POST['nidn']);
     $stmtValidation->execute();
 
     if ($stmtValidation->rowCount() > 0) {
         ?>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <h5>Gagal</h5>
-            NIM sudah ada
+            NIDN sudah ada
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <?php
     } else {
-        $insertSql = "INSERT INTO tb_mahasiswa (nim, nama, jurusan, jenis_kelamin, alamat, telepon, email) VALUES (:nim, :nama, :jurusan, :jenis_kelamin, :alamat, :telepon, :email)";
+        $insertSql = "INSERT INTO tb_dosen (nidn, nama, jenis_kelamin, alamat, telepon, email) VALUES (:nidn, :nama, :jenis_kelamin, :alamat, :telepon, :email)";
         $stmt = $db->prepare($insertSql);
-        $stmt->bindParam(':nim', $_POST['nim']);
+        $stmt->bindParam(':nidn', $_POST['nidn']);
         $stmt->bindParam(':nama', $_POST['nama']);
-        $stmt->bindParam(':jurusan', $_POST['jurusan']);
         $stmt->bindParam(':jenis_kelamin', $_POST['jenis_kelamin']);
         $stmt->bindParam(':alamat', $_POST['alamat']);
         $stmt->bindParam(':telepon', $_POST['telepon']);
@@ -37,13 +36,13 @@ if (isset($_POST['button_create'])) {
             $_SESSION['hasil'] = false;
             $_SESSION['pesan'] = "Gagal simpan data";
         }
-        echo "<meta http-equiv='refresh' content='0;url=?page=mahasiswa-read'>";
+        echo "<meta http-equiv='refresh' content='0;url=?page=dosen-read'>";
     }
 }
 ?>
 <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Input Data Mahasiswa</h1>
+        <h1 class="h3 mb-0 text-gray-800">Input Data Dosen</h1>
     </div>
 
     <!-- Content Row -->
@@ -52,17 +51,17 @@ if (isset($_POST['button_create'])) {
             <div class="col-lg-12 mb-4">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Mahasiswa</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Dosen</h6>
                     </div>
                     <div class="card-body">
                         <form method="post">
                             <div class="form-group">
                                 <div class="row mb-3">
                                     <div class="col-lg-2">
-                                        <label for="nim" class="py-2">NIM</label>
+                                        <label for="nidn" class="py-2">NIDN</label>
                                     </div>
                                     <div class="col-lg-10">
-                                        <input type="text" name="nim" class="form-control">
+                                        <input type="text" name="nidn" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -71,18 +70,6 @@ if (isset($_POST['button_create'])) {
                                     </div>
                                     <div class="col-lg-10">
                                         <input type="text" name="nama" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-2">
-                                        <label for="jurusan" class="py-2">Jurusan</label>
-                                    </div>
-                                    <div class="col-lg-10">
-                                        <select name="jurusan" class="form-control" id="select2-jurusan">
-                                            <option value="">- Pilih -</option>
-                                            <option value="TI">Teknik Informatika</option>
-                                            <option value="SI">Sistem Informasi</option>
-                                        </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -130,7 +117,7 @@ if (isset($_POST['button_create'])) {
                                                     <i class="fas fa-save"></i>
                                                     Simpan
                                                 </button>
-                                                <a href="?page=mahasiswa-read" class="btn btn-danger">
+                                                <a href="?page=dosen-read" class="btn btn-danger">
                                                     <i class="fas fa-angle-left"></i>
                                                     Kembali
                                                 </a>

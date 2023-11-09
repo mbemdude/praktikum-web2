@@ -18,7 +18,7 @@
                                 <label for="level" class="py-2">Level</label>
                             </div>
                             <div class="col-lg-9">
-                                <select name="level" class="form-control mb-2">
+                                <select name="level" class="form-control mb-2" id="select2-level">
                                     <option value="">- Pilih -</option>
                                     <option value="operator">Operator</option>
                                     <option value="administrator">Administrator</option>

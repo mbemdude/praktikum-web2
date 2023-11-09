@@ -13,6 +13,7 @@
                     $db = $database->getConnection();
 
                     $countMahasiswa = countRows('tb_mahasiswa', $db);
+                    $countDosen = countRows('tb_dosen', $db);
                     $countUser = countRows('tb_user', $db);
                     ?>
                     <!-- Page Heading -->
@@ -51,7 +52,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Dosen</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">900</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $countDosen ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-user-tie fa-2x text-gray-300"></i>
